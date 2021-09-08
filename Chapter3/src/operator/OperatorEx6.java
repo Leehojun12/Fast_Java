@@ -7,7 +7,7 @@ public class OperatorEx6 {
 		int b = 20;
 		int max;
 		
-		max = (a > b)? a:b; //조건 연산자
+		max = (a > b)? a:b; //  조건 연산자
 		System.out.println(max);
 	}
 
