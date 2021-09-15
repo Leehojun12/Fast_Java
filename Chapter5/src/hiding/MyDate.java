@@ -24,7 +24,7 @@ public class MyDate {
 		if(month > 1 && month < 12) {
 			isValid = true;
 		}
-		this.month = month;
+		this.month = month; // this가 없으면 다 같은 month가 된다.
 	}
 
 	public int getYear() {
