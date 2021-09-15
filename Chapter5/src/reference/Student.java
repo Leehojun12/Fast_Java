@@ -6,9 +6,9 @@ public class Student {
 	String studentName;
 	
 	Subject korea;
-	Subject	math;
+	Subject math;
 	
-	public Student(int id, String name){ //생성자를 통해 초기화
+	public Student(int id, String name) {
 		
 		studentID = id;
 		studentName = name;
@@ -18,16 +18,18 @@ public class Student {
 	}
 	
 	public void setKoreaSubject(String name, int score) {
-		korea.subjectName = name;
-		korea.score = score;
+		korea.SubjectName = name;
+		korea.Score = score;
+	}
+	public void setMathSubject(String name, int score) {
+		math.SubjectName = name;
+		math.Score = score;
 	}
 	
-	public void setMathSubject(String name, int score) {
-		math.subjectName = name;
-		math.score = score;
-	}
 	public void showStudentSocre() {
-		int total = korea.score + math.score;
-		System.out.println(studentName + " 학생의 총점은 :" + total + "입니다");
+		int total = korea.Score + math.Score;
+		System.out.println(studentName + "학생의 총점은 : "+ total + "입니다");
 	}
+
+
 }

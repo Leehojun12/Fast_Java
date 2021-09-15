@@ -2,8 +2,9 @@ package reference;
 
 public class Subject {
 	
-	String subjectName;
+	String subjectname;
 	
-	int score;
-	int subjectID;
+	int Score;
+	String SubjectName;
+
 }
