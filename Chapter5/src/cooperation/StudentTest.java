@@ -4,8 +4,8 @@ public class StudentTest {
 
 	public static void main(String[] args) {
 		
-		Student studentL = new Student("Lee", 5000);
-		Student studentK = new Student("Kim", 10000);
+		Student studentL = new Student("Lee", 5000, 4);
+		Student studentK = new Student("Kim", 10000, 15);
 		
 		Bus bus100= new Bus(100);
 		Bus bus500= new Bus(500);

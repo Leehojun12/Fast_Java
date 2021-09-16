@@ -5,7 +5,7 @@ public class StudentTest {
 		
 		Student studentLee = new Student("이호준"); // default constructor
 		//studentLee.studentName = "이호준";
-		studentLee.address = "수원";
+		//studentLee.address = "수원";
 		
 		studentLee.showStudentInfo();
 		
