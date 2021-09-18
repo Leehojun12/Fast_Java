@@ -14,6 +14,6 @@ public class Card {
 		return CardNumber;
 	}
 	public void setCardNumber(int cardNumber) {
-		CardNumber = cardNumber;
+		this.CardNumber = cardNumber;
 	}	
 }
