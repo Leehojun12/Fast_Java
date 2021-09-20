@@ -7,9 +7,18 @@ public class MyDate {
 	private int year;
 	
 	//getter , setter
-	private boolean isValid;
+	private boolean isValid = true;
+	
+	public MyDate(int day, int month, int year) {
+		setDay(day);
+		setMonth(month);
+		setYear(year);
+	}
 	
 	public void setDay(int day) {
+		if(day < 1 || day > 31) {
+			isValid = false;
+		}
 		this.day = day; // 앞 day는 위에 변수 뒤 day는 public 변수
 	}
 	public int getDay() {
@@ -21,8 +30,8 @@ public class MyDate {
 	}
 
 	public void setMonth(int month) {
-		if(month > 1 && month < 12) {
-			isValid = true;
+		if(month < 1 || month > 12) {
+			isValid = false;
 		}
 		this.month = month; // this가 없으면 다 같은 month가 된다.
 	}
@@ -35,13 +44,13 @@ public class MyDate {
 		this.year = year;
 	}
 
-	public void showDate() {
-		if(isValid == true) {
-			System.out.println(year + "년" + month + "월" + day + "일" + "입니다");
+	public String isValid() {
+		if(isValid) {
+			return year + "년" + month + "월" + day + "일" + "입니다";
 		}
 		else {
-			System.out.println("유효하지 않은 날짜 입니다.");
-		}
+			return "유효하지 않은 날짜 입니다.";
+		}	
 	}
 
 }
