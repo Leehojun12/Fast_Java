@@ -21,7 +21,7 @@ public class CustomerTest  {
 		Customer inputCustomer = null;
 		Scanner scanner = new Scanner(System.in);			
 		while(true) {
-			System.out.print("금액을 적으시오 : ");
+			System.out.print("상품금액을 적으시오 : ");
 			paymoney = scanner.nextInt();
 			System.out.println("회원 아이디을 적으시오 : ");
 			customerID = scanner.nextInt();
