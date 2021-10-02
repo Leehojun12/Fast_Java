@@ -18,5 +18,4 @@ public class CompleteCalc extends Calculator{
 	public void showInfo() {
 		System.out.println("모두 구현");
 	}
-	
 }
