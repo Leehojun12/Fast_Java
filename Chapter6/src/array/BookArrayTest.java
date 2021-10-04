@@ -11,9 +11,9 @@ public class BookArrayTest {
 		library[2] = new Book("태백산맥3","이호준");
 		library[3] = new Book("태백산맥4","이호준");
 		library[4] = new Book("태백산맥5","이호준");
-		for(int i=0; i < library.length;i++) {
-			System.out.println(library[i]);
-			library[i].showBookInfo();
+		
+		for(Book book : library) {
+			book.showBookInfo();
 		}
 	}
 }
