@@ -16,8 +16,6 @@ public class GenericPrinterTest {
 		
 		powder.doPrinting();
 		plastic.doPrinting();
-		//GenericPrinter<Water> waterPrinter = new GenericPrinter<Water>();
-		//Water water = new Water();
 		
 		
 	
