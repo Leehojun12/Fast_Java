@@ -1,6 +1,5 @@
 package stream;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.function.BinaryOperator;
 
@@ -26,7 +25,9 @@ public class ReduceTest {
 				return s1;
 			else return s2;
 		}));
-		
+		System.out.println(greetings[0].length());
+		System.out.println(greetings[1].length());
+		System.out.println(greetings[2].length());
 		System.out.print(Arrays.stream(greetings).reduce(new CompareString()).get());
 	}
 }
