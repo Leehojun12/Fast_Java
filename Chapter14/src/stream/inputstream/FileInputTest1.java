@@ -11,7 +11,6 @@ public class FileInputTest1 {
 		FileInputStream fis = null; 
 		try {
 			fis = new FileInputStream("input.txt");
-			
 			int i;
 				while((i = fis.read()) != -1){
 			System.out.print((char)i);
@@ -25,7 +24,7 @@ public class FileInputTest1 {
 				System.out.println(e);
 			}
 		}
+		System.out.println();
 		System.out.println("end");
 	}
-
 }

@@ -16,6 +16,7 @@ public class FileInputTest2 {
 		} catch (IOException e) { //FileNotFoundException
 				System.out.println(e);
 		}
+		System.out.println();
 		System.out.println("end");
 	}
 
