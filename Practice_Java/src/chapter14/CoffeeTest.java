@@ -6,6 +6,7 @@ public class CoffeeTest {
 		
 		Coffee americano = new KenyaAmericano();
 		americano.brewing();
+		System.out.print("Nothing");
 		
 		System.out.println();
 		
