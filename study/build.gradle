@@ -12,13 +12,19 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.6.2'
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('mysql:mysql-connector-java')
     compileOnly('org.projectlombok:lombok')
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-json'
-    testImplementation ('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+    testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+        exclude module: 'junit'
+    }
 
 }
 

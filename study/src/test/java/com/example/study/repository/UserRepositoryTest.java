@@ -2,9 +2,13 @@ package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
 import com.example.study.model.entitiy.User;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -28,14 +32,20 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
         User newUser = userRepository.save(user);
         System.out.println("newUser : " + newUser);
-
     }
     @Test
+    @Transactional
     public void read() {
-        Optional<User> user = userRepository.findById(2L); //Type이 Long이기떄문에 2L;;
+        // 쿼리문 : select * from user where id = ?
+        Optional<User> user = userRepository.findByAccountAndEmail("Leehojun","dlghwns82@naver.com"); //Type이 Long이기떄문에 2L;;
 
         user.ifPresent(selectuser ->{
-            System.out.println("user : " + user);
+
+            selectuser.getOrderDetailList().stream().forEach(detail ->{ // List이기 떄문에 stream으로 쓴다
+
+                System.out.println(detail.getItem());
+
+            });
         });
     }
     @Test
@@ -51,15 +61,21 @@ public class UserRepositoryTest extends StudyApplicationTests {
         });
     }
     @Test
+    @Transactional //rollback Data를 돌려놓을떄
     public void delete() {
-        Optional<User> user = userRepository.findById(3L);
+        Optional<User> user = userRepository.findById(5L);
 
-        Assert.assertTrue(user.isPresent()); //true
+       // Assert.assertTrue(user.isPresent()); //true
         user.ifPresent(selectUser->{
             userRepository.delete(selectUser);
         });
-        Optional<User> deletUser = userRepository.findById(3L);
+        Optional<User> deleteUser = userRepository.findById(5L);
 
-        Assert.assertFalse(deletUser.isPresent()); //false
+        if(deleteUser.isPresent()){
+            System.out.println("데이터 : " + deleteUser.get());
+        }else{
+            System.out.println("데이터 삭제, 데이터 없음");
+        }
+       // Assert.assertFalse(deletUser.isPresent()); //false
     }
 }
