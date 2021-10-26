@@ -19,8 +19,8 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     @Test//테스트코드를 작성할때 필수 어노테이션
     public void create() {
-       String account = "Test01";
-       String password = "1234";
+       String account = "Test02";
+       String password = "1235";
        String status = "REGISTERED";
        String email = "dlghwns82@naver.com";
        String phoneNumber = "010-8974-2058";
@@ -35,8 +35,6 @@ public class UserRepositoryTest extends StudyApplicationTests {
        user.setEmail(email);
        user.setPhoneNumber(phoneNumber);
        user.setRegisteredAt(registeredAt);
-       user.setCreatedAt(createdAt);
-       user.setCreatedBy(createdBy);
 
        User newUser = userRepository.save(user);
 
