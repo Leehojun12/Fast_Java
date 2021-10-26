@@ -1,6 +1,7 @@
 package com.example.study.model.entitiy;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -17,7 +18,8 @@ import java.util.List;
 @Entity
 @ToString(exclude = {"OrderGroup"})
 @EntityListeners(AuditingEntityListener.class) // 감시자를 하겠다 설정;;
-
+@Builder // 편하게 생성자를 만듬
+@Accessors(chain = true) // 체인 형식으로 .으로 불러온다
 public class User {
 
     @Id // 식별자로 ID

@@ -1,7 +1,6 @@
 package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
-import com.example.study.model.entitiy.OrderDetail;
 import com.example.study.model.entitiy.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -35,6 +34,12 @@ public class UserRepositoryTest extends StudyApplicationTests {
        user.setEmail(email);
        user.setPhoneNumber(phoneNumber);
        user.setRegisteredAt(registeredAt);
+
+      /* User u = User.builder()
+               .account(account)
+               .password(password)
+               .status(status)
+               .build();*/
 
        User newUser = userRepository.save(user);
 

@@ -1,8 +1,10 @@
 package com.example.study.model.entitiy;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -17,6 +19,8 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @EntityListeners(AuditingEntityListener.class) // 감시자를 하겠다 설정;;
+@Builder // 편하게 생성자를 만듬
+@Accessors(chain = true) // 체인 형식으로 .으로 불러온다
 public class AdminUser {
 
     @Id
