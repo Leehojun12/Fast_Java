@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -18,13 +19,14 @@ public class OrderDetailRepositoryTest extends StudyApplicationTests {
     public void create(){
 
         OrderDetail orderDetail = new OrderDetail();
-        orderDetail.setOrderAt(LocalDateTime.now());
-
-        //어떤 사용자
-        //orderDetail.setUserId(7L);
-
-        // 어떤 상품
-       // orderDetail.setItemId(1L);
+        orderDetail.setStatus("WAITING");
+        orderDetail.setArrivalDate(LocalDateTime.now().plusDays(2));
+        orderDetail.setQuantity(1);
+        orderDetail.setTotalPrice(BigDecimal.valueOf(100000));
+        orderDetail.setOrderGroupId(1L); //어떠한 장바구니에
+        orderDetail.setItemId(1L); // 어떠한 상품
+        orderDetail.setCreatedAt(LocalDateTime.now());
+        orderDetail.setCreatedBy("AdminServer");
 
         OrderDetail newOrderDatail = orderDetailRepository.save(orderDetail);
         System.out.println(newOrderDatail);
@@ -48,8 +50,19 @@ public class OrderDetailRepositoryTest extends StudyApplicationTests {
     }
 
     @Test
-    @Transactional
-    public void delete(){
+    public void Delete(){
+        Optional<OrderDetail> orderDetail = orderDetailRepository.findById(2L);
+
+        orderDetail.ifPresent(c->{
+            orderDetailRepository.delete(c);
+        });
+
+        Optional<OrderDetail> deleteorderDetail = orderDetailRepository.findById(2L);
+        if(deleteorderDetail.isPresent()){
+            System.out.println("데이터 :" + deleteorderDetail.get());
+        }else{
+            System.out.println("데이터 없음, 데이터 삭제");
+        }
 
     }
 
