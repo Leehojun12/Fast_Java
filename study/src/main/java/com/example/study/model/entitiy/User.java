@@ -1,9 +1,7 @@
 package com.example.study.model.entitiy;
 
 import lombok.*;
-
 import javax.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -11,6 +9,7 @@ import java.util.List;
 @AllArgsConstructor //모든 매개변수를 가지는 생성자
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"OrderGroup"})
 public class User {
 
     @Id // 식별자로 ID
@@ -27,5 +26,9 @@ public class User {
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
+
+    // User 1 : N OrderGroup
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<OrderGroup> orderGroupList;
 
 }

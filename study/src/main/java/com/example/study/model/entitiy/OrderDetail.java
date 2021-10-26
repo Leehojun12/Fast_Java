@@ -8,12 +8,13 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity //order_detail -- camel case
-//@ToString(exclude = {"user", "item"}) // User user 와 item overflow 됨
+@Entity
+@ToString(exclude = {"orderGroup","item"})
 public class OrderDetail {
 
     @Id
@@ -27,22 +28,14 @@ public class OrderDetail {
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
-    private Long OrderGroupId;
-    private Long ItemId;
+   // private Long OrderGroupId;
+   // private Long ItemId;
 
 
+    // OrderDetail N : 1 OrderGroup
+    @ManyToOne
+    private OrderGroup orderGroup;
 
-
-
-
-
-
-   // N : 1
-
-   // @ManyToOne // Many: OrderDetail
-   // private User user; // 객체 이름을 적어 줘야된다 user_id
-
-   //N : 1
-   //  @ManyToOne
-   // private Item item;
+    @ManyToOne
+    private Item item;
 }
