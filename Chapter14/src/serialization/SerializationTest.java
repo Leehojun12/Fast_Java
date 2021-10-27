@@ -27,6 +27,7 @@ public class SerializationTest {
 		Person personLee = new Person("이호준", "개발자");
 		Person personKim = new Person("김도영", "축산공학");
 		
+		// 인스턴스 저장(직렬화)
 		try(FileOutputStream fos = new FileOutputStream("serial.dat");
 				ObjectOutputStream oos = new ObjectOutputStream(fos)){
 			oos.writeObject(personLee);
@@ -34,6 +35,7 @@ public class SerializationTest {
 		}catch(IOException e) {
 			System.out.println(e);
 		}
+		//인스턴스 복원(역직렬화)
 		try(FileInputStream fis = new FileInputStream("serial.dat");
 				ObjectInputStream ois = new ObjectInputStream(fis)){
 			Person p1 =(Person)ois.readObject();
