@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class If_Exam2 {
 
 	public static void main(String[] args) {
+		System.out.println("나이를 입력하시오 : ");
 		
 		Scanner scanner = new Scanner(System.in); // 입력을 할수 있게 함
 		int age = scanner.nextInt();

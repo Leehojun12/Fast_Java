@@ -21,8 +21,8 @@ public class NestedLoop {
 		} */
 		
 		while(dan < 10) {
-			num = 1;
-			System.out.println(" 숫자를 입력 하시오: ");
+			num = 1; // 숫자를 1로 초기화 시켜줍니다.
+			System.out.println(" 숫자를 입력 하시오: "); // scanner로 입력 값을 받는다.
 			dan = scanner.nextInt();
 			
 			while(num < 10) {

@@ -8,7 +8,7 @@ public class ContinueExample {
 		for(num = 1; num <= 100; num++) {
 			
 			if((num % 3) != 0) continue;
-			System.out.println(num);
+			System.out.print(num + " ");
 		}
 	}
 
