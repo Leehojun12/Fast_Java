@@ -1,6 +1,7 @@
 package com.example.study.controller;
 
 import com.example.study.model.SearchParam;
+import com.example.study.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,5 +32,12 @@ public class GetController {
 
         //{"account" : "", "email" : "", "page" :0}
         return searchParam; // searchParam으로 return 할시에 위에 같이 joson형식으로 리턴 된다
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        // {"resultCode: "OK" , description: "OK"}
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }
