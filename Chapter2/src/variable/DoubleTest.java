@@ -1,5 +1,4 @@
 package variable;
-
 public class DoubleTest {
 	
 	public static void main(String[] args) {
@@ -9,6 +8,6 @@ public class DoubleTest {
 		
 		System.out.println(dNum);
 		System.out.println(fNum);
-	}
-
+	} 
 }
+

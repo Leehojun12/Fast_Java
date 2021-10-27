@@ -8,8 +8,6 @@ public class BooleanTest {
 		
 		System.out.println(isMarried);
 		
-		//var i = 10;
-		//System.out.println(i);
 	}
 
 }
